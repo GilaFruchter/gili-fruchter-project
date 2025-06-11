@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BL.Api;
-using DAL.Models;  // זהו ה-using הנדרש
+using DAL.Models; 
 
 namespace Server.Controllers
 {
@@ -32,6 +32,19 @@ namespace Server.Controllers
         {
             userActions.Create(user);
             return user;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCustomerById(int id)
+        {
+            var customer = await userActions.GetUserByIdAsync(id);
+            return Ok(customer);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteInvitation(int id)
+        {
+            await userActions.DeleteUser(id);
+            return Ok();
         }
     }
 }

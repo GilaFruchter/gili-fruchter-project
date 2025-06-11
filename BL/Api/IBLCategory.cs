@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace BL.Api
 {
     public interface IBLCategory
     {
+        public Task<List<Category>> GetAll();
+        public void Create(Category user);
+        public Task<Category> GetCategoryByIdAsync(int id);
+        public Task DeleteCategory(int id);
     }
 }

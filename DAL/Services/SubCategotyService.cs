@@ -1,5 +1,6 @@
 ﻿using DAL.Api;
 using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,21 +16,38 @@ namespace DAL.Services
         {
             this.db = db;
         }
-        public Task Create(SubCategory item)
+       
+        public async Task Create(SubCategory subCategory)
         {
-            throw new NotImplementedException();
+            await db.AddAsync(subCategory);
+            await db.SaveChangesAsync();
         }
-
-        public Task Delete(SubCategory item)
+        public async Task Delete(SubCategory subCategory)
         {
-            throw new NotImplementedException();
+            var existingSubCategory = await db.SubCategories.FindAsync(subCategory.Id);
+            if (existingSubCategory == null)
+            {
+                throw new Exception($"User with ID {subCategory.Id} not found.");
+            }
+            db.SubCategories.Remove(existingSubCategory);
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving changes: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                throw;
+            }
         }
-
-        public Task<List<SubCategory>> Read()
+        public async Task<List<SubCategory>> Read()
         {
-            throw new NotImplementedException();
+            return await db.SubCategories.ToListAsync();
         }
-
         public Task UpDate(SubCategory item)
         {
             throw new NotImplementedException();

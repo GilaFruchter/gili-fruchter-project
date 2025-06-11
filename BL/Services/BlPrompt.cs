@@ -1,13 +1,15 @@
-﻿using BL.Api;
+﻿using MyProject.Core.Interfaces;
+using MyProject.Core.Models;
+
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Services
+namespace MyProject.Application.Services
 {
-    public class BlPrompt: IBLPrompt
+    public class PromptService 
     {
     }
 }

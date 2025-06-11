@@ -41,7 +41,7 @@ namespace Dal.Service
                 {
                     Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
                 }
-                throw; // חשוב לזרוק את השגיאה כדי לטפל בה ברמה גבוהה יותר
+                throw;
             }
         }
         public async Task<List<User>> Read()

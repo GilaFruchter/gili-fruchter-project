@@ -11,6 +11,7 @@ namespace BL.Api
     {
         public Task<List<User>> GetAll();
         public void Create(User user);
-
+        public Task<User> GetUserByIdAsync(int id);
+        public Task DeleteUser(int id);
     }
 }

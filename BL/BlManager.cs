@@ -18,7 +18,7 @@ public class BlManager : IBLManager
         services.AddSingleton<IBLUser, BLUserService>();
         services.AddSingleton<IBLCategory, BLCategoryService>();
         services.AddSingleton<IBLSubCategory, BLSubCategoryService>();
-        services.AddSingleton<IBLPrompt, BlPrompt>();
+        //services.AddSingleton<IBLPrompt, BlPrompt>();
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
         BLUser = serviceProvider.GetService<IBLUser>();
