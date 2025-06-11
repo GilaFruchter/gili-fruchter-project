@@ -1,4 +1,4 @@
-﻿.vs/
+.vs/
 *.suo
 *.user
 *.aps
@@ -8,11 +8,6 @@
 *.opensdf
 *.sdf
 *.bak
-*.obj/
-*.exe
-*.dll
-*.lib
-*.bin/
 *.pdb
 *.ilk
 *.log
@@ -20,9 +15,21 @@
 *.vcxproj.filters
 *.sln.docstates
 
+bin/
+obj/
+*.exe
+*.dll
+*.lib
+
+node_modules/
 build/
 .env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.DS_Store 
+.npm/
+.yarn/
+.vite/
+
+.DS_Store
+Thumbs.db
