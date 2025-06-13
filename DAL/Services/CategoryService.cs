@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Services
 {
-    public class CategoryService : ICategory
+    public class  CategoryService: ICategory
     {
         DatabaseManager db;
         public CategoryService(DatabaseManager db)

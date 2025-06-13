@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 public class BlManager : IBLManager
 {
+//check
     public IBLUser BLUser { get; }
     public IBLCategory BLCategory { get; }
     public IBLSubCategory BLSubCategory { get; }
@@ -18,7 +19,7 @@ public class BlManager : IBLManager
         services.AddSingleton<IBLUser, BLUserService>();
         services.AddSingleton<IBLCategory, BLCategoryService>();
         services.AddSingleton<IBLSubCategory, BLSubCategoryService>();
-        //services.AddSingleton<IBLPrompt, BlPrompt>();
+        services.AddSingleton<IBLPrompt, BlPromptService>();
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
         BLUser = serviceProvider.GetService<IBLUser>();

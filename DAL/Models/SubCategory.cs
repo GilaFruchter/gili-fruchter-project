@@ -11,7 +11,7 @@ public partial class SubCategory
 
     public int CategoryId { get; set; }
 
-    public virtual Category Category { get; set; } = null!;
+    public virtual Category? Category { get; set; }
 
     public virtual ICollection<Prompt> Prompts { get; set; } = new List<Prompt>();
 }

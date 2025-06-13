@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Services
 {
-    internal class SubCategotyService : ISubCategory
+    public class SubCategotyService : ISubCategory
     {
         DatabaseManager db;
         public SubCategotyService(DatabaseManager db)

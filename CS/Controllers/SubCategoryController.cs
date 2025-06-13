@@ -39,7 +39,7 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSubCategoryById(int id)
         {
-            var customer = await subCategoryActions.GetSubCategoryByIdAsync(id);
+            var customer = await subCategoryActions.GetSubCategoryById(id);
             return Ok(customer);
         }
 
@@ -48,7 +48,7 @@ namespace Server.Controllers
         {
             try
             {
-                var customers = await subCategoryActions.GetAllSubCategoryByIdAsync(id);
+                var customers = await subCategoryActions.GetAllSubCategoryById(id);
                 return Ok(customers);
             }
             catch (Exception ex)

@@ -42,7 +42,7 @@ namespace BL.Services
             return await subCat.Read();
         }
 
-        public async Task<List<SubCategory>> GetAllSubCategoryByIdAsync(int id)
+        public async Task<List<SubCategory>> GetAllSubCategoryById(int id)
         {
             var customers = await subCat.Read();
             var listCustomers = customers.Where(c => c.CategoryId == id).ToList();
@@ -54,6 +54,10 @@ namespace BL.Services
             return listCustomers;
         }
 
+        public Task<SubCategory> GetSubCategoryById(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<SubCategory> GetSubCategoryByIdAsync(int id)
         {

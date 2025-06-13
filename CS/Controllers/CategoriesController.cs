@@ -37,7 +37,7 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomerById(int id)
         {
-            var customer = await categoryActions.GetCategoryByIdAsync(id);
+            var customer = await categoryActions.GetCategoryById(id);
             return Ok(customer);
         }
         [HttpDelete("{id}")]

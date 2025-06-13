@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL.Services
 {
+    //check
     public class BLCategoryService: IBLCategory
     {
         ICategory cat;
@@ -27,7 +28,7 @@ namespace BL.Services
             return await cat.Read();
         }
 
-        public async Task<Category> GetCategoryByIdAsync(int id)
+        public async Task<Category> GetCategoryById(int id)
         {
             var customers = await cat.Read();
             var customer = customers.FirstOrDefault(c => c.Id == id);

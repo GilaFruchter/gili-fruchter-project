@@ -11,7 +11,7 @@ namespace DAL.Api
         public IUser user { get; }
         public ICategory category { get; }
         public ISubCategory subCategory { get; }
-        public IPromptService prompt { get; }
+        public IPrompt prompt { get; }
 
     }
 }

@@ -11,8 +11,8 @@ namespace BL.Api
     {
         public Task<List<SubCategory>> GetAll();
         public void Create(SubCategory subCategory);
-        public Task<SubCategory> GetSubCategoryByIdAsync(int id);
-        public Task<List<SubCategory>> GetAllSubCategoryByIdAsync(int id);
+        public Task<SubCategory> GetSubCategoryById(int id);
+        public Task<List<SubCategory>> GetAllSubCategoryById(int id);
         public Task DeleteSubCategory(int id);
     }
 }

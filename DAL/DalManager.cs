@@ -17,21 +17,25 @@ namespace DAL
         public IUser? user { get; set; }
         public ICategory? category { get; set; }
         public ISubCategory? subCategory { get; set; }
-        public IPromptService? prompt { get; set; }
+        public IPrompt? prompt { get; set; }
 
         public DalManager()
         {
+
             ServiceCollection service = new ServiceCollection();
             service.AddSingleton<DatabaseManager>();
             service.AddSingleton<IUser, UserService>();
             service.AddSingleton<ICategory, CategoryService>();
             service.AddSingleton<ISubCategory, SubCategotyService>();
+            service.AddSingleton<IPrompt, PromptService>();
+
+
 
             ServiceProvider serviceProvider = service.BuildServiceProvider();
             user = serviceProvider.GetService<IUser>();
             category = serviceProvider.GetService<ICategory>();
             subCategory = serviceProvider.GetService<ISubCategory>();
-            prompt = serviceProvider.GetService<IPromptService>();
+            prompt = serviceProvider.GetService<IPrompt>();
 
         }
     }
