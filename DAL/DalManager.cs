@@ -2,6 +2,7 @@
 using DAL.Api;
 using DAL.Models;
 using DAL.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections;
@@ -31,7 +32,7 @@ namespace DAL
 
 
 
-            ServiceProvider serviceProvider = service.BuildServiceProvider();
+        ServiceProvider serviceProvider = service.BuildServiceProvider();
             user = serviceProvider.GetService<IUser>();
             category = serviceProvider.GetService<ICategory>();
             subCategory = serviceProvider.GetService<ISubCategory>();

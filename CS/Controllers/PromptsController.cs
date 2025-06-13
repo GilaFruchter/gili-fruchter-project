@@ -1,12 +1,13 @@
 ﻿// File: Controllers/PromptsController.cs
 // (Place this file in the 'Controllers' folder of your API project, e.g., in the 'CS' project)
 
+using BL.Api; // ייבוא ממשקי ה-BL (כעת נזריק את IBLPrompt)
+using BL.Services;
+using DAL.Models;
+using DAL.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using BL.Api; // ייבוא ממשקי ה-BL (כעת נזריק את IBLPrompt)
-using DAL.Models;
-using BL.Services;
 
 namespace Server.Controllers
 {
@@ -43,6 +44,25 @@ namespace Server.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"Error adding prompt: {ex.Message}");
+                return StatusCode(500, $"Error: {ex.InnerException?.Message ?? ex.Message}");
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetPromptById(int id)
+        {
+            try
+            {
+                List<Prompt> prompt = await _blPromptService.GetAllPromptByID(id);
+                if (prompt == null)
+                {
+                    return NotFound($"Prompt with ID {id} not found.");
+                }
+                return Ok(prompt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving prompt: {ex.Message}");
                 return StatusCode(500, $"Error: {ex.InnerException?.Message ?? ex.Message}");
             }
         }

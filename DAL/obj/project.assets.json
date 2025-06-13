@@ -9157,11 +9157,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fruhter\\Desktop\\project\\‏‏CS - עותק\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Fruhter\\Desktop\\project\\‏‏CS - עותק\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\Fruhter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fruhter\\Desktop\\project\\‏‏CS - עותק\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

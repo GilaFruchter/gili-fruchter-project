@@ -32,7 +32,6 @@ namespace BL.Services
             var existingPrompt = allPrompts.FirstOrDefault(p => p.Prompt1 == prompt);
             if (existingPrompt != null)
             {
-                // אם אתה לא הולך לשנות אותו – פשוט תחזיר אותו בלי לגעת ב־context
                 return existingPrompt;
             }
             string aiResponse = await GetAIResponse(prompt);
@@ -96,7 +95,12 @@ namespace BL.Services
             var allPrompts = await prompts.Read();
             return allPrompts.OrderBy(p => p.CategoryId).ToList();
         }
+
+        public async Task<List<Prompt>> GetAllPromptByID(int id)
+        {
+            var allPrompts = await prompts.Read();
+            return allPrompts.Where(p => p.UserId == id).ToList();
+        }
     }
 }
-
 

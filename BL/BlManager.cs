@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 public class BlManager : IBLManager
 {
-//check
     public IBLUser BLUser { get; }
     public IBLCategory BLCategory { get; }
     public IBLSubCategory BLSubCategory { get; }

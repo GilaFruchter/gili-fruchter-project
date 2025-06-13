@@ -51,7 +51,7 @@ namespace DAL.Services
         }
         public async Task<List<Prompt>> Read()
         {
-            return await db.Prompts.AsNoTracking().ToListAsync();
+            return await db.Prompts.ToListAsync();
         }
         public Task UpDate(Prompt item)
         {
