@@ -18,12 +18,11 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 
-//builder.Services.AddSingleton<IBLManager, BlManager>();
 builder.Services.AddSingleton<IDal, DalManager>();
 builder.Services.AddSingleton<IBLUser, BLUserService>();
 builder.Services.AddSingleton<IBLCategory, BLCategoryService>();
 builder.Services.AddSingleton<IBLSubCategory, BLSubCategoryService>();
-builder.Services.AddSingleton<IBLPrompt, BlPromptService>(); // ודא שזה נוכח
+builder.Services.AddSingleton<IBLPrompt, BlPromptService>();
 builder.Services.AddSingleton<IBLManager, BlManager>();
 
 builder.Services.AddCors(options =>

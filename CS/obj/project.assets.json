@@ -7268,11 +7268,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\CS\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\Fruhter\\Desktop\\final-project-from-git\\gili-fruchter-project\\CS\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\CS\\Server.csproj",
+      "projectPath": "C:\\Users\\Fruhter\\Desktop\\final-project-from-git\\gili-fruchter-project\\CS\\Server.csproj",
       "packagesPath": "C:\\Users\\Fruhter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\CS\\obj\\",
+      "outputPath": "C:\\Users\\Fruhter\\Desktop\\final-project-from-git\\gili-fruchter-project\\CS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7294,8 +7294,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\Fruhter\\Desktop\\‏‏gili-fruchter-project - עותק\\BL\\BL.csproj"
+            "C:\\Users\\Fruhter\\Desktop\\final-project-from-git\\gili-fruchter-project\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\Fruhter\\Desktop\\final-project-from-git\\gili-fruchter-project\\BL\\BL.csproj"
             }
           }
         }

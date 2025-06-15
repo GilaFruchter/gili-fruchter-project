@@ -1,7 +1,4 @@
-﻿// File: Controllers/PromptsController.cs
-// (Place this file in the 'Controllers' folder of your API project, e.g., in the 'CS' project)
-
-using BL.Api; // ייבוא ממשקי ה-BL (כעת נזריק את IBLPrompt)
+﻿using BL.Api;
 using BL.Services;
 using DAL.Models;
 using DAL.Services;
@@ -32,8 +29,9 @@ namespace Server.Controllers
 
             try
             {
+                //Prompt newPrompt = await _blPromptService.AddPrompt(
                 Prompt newPrompt = await _blPromptService.AddPrompt(
-                    request.UserId,
+                  request.UserId,
                     request.CategoryId,
                     request.SubCategoryId,
                     request.Prompt1
@@ -48,15 +46,26 @@ namespace Server.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllPrompts()
+        {
+            var allSubCategories = await _blPromptService.GetAll();
+            if (allSubCategories == null || allSubCategories.Count == 0)
+            {
+                return NotFound("ERROR!! there are no available users!!");
+            }
+            return Ok(allSubCategories);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPromptById(int id)
         {
             try
             {
                 List<Prompt> prompt = await _blPromptService.GetAllPromptByID(id);
-                if (prompt == null)
+                if (prompt == null || !prompt.Any()) 
                 {
-                    return NotFound($"Prompt with ID {id} not found.");
+                    Console.WriteLine($"Prompt with ID {id} not found.");
                 }
                 return Ok(prompt);
             }

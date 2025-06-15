@@ -1,17 +1,17 @@
 ﻿using BL.Api;
 using DAL.Api;
-using System.Net.Http.Headers;
-using System.Text;
-
 using DAL.Api;
 using DAL.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Headers;
+using System.Runtime.Intrinsics.X86;
+using System.Text;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 
 namespace BL.Services
@@ -40,7 +40,7 @@ namespace BL.Services
             var random = new Random();
             var newPrompt = new Prompt
             {
-                Id= random.Next(1, 1000000), 
+                Id = random.Next(1, 1000000),
                 UserId = user_id,
                 CategoryId = category_id,
                 SubCategoryId = sub_category_id,
@@ -50,7 +50,6 @@ namespace BL.Services
             };
             await prompts.Create(newPrompt);
 
-            // החזרת הפרומפט החדש
             return newPrompt;
         }
         private async Task<string> GetAIResponse(string prompt)
@@ -94,6 +93,10 @@ namespace BL.Services
         {
             var allPrompts = await prompts.Read();
             return allPrompts.OrderBy(p => p.CategoryId).ToList();
+        }
+        public async Task<List<Prompt>> GetAll()
+        {
+            return await prompts.Read();
         }
 
         public async Task<List<Prompt>> GetAllPromptByID(int id)
